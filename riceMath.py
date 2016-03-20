@@ -27,6 +27,7 @@ class RiceMath(object):
 	self.ansB = ".//*[@id='external-game-container']/div/div[1]/div/div[2]/div[2]/div[2]/div/ul/li[2]/a"
 	self.ansC = ".//*[@id='external-game-container']/div/div[1]/div/div[2]/div[2]/div[2]/div/ul/li[3]/a"
 	self.ansD = ".//*[@id='external-game-container']/div/div[1]/div/div[2]/div[2]/div[2]/div/ul/li[4]/a"
+	self.strQuestion = ".//*[@id='question-title']/a/b"
 
 	#Login Elements
 	self.loginBtn = ".//*[@id='block-block-8']/div[4]/div/div/ul/li/a[1]"
@@ -60,7 +61,7 @@ class RiceMath(object):
 		dText = driver.find_element_by_xpath(self.ansD).text
 
 		#Get parse and solve page question
-		question = driver.find_element_by_xpath(".//*[@id='question-title']/a/b").text	
+		question = driver.find_element_by_xpath(self.strQuestion).text	
 		answerList = question.split("x")
 		val1 = answerList[0].replace(" ", "")
 		val1 = int(val1)
